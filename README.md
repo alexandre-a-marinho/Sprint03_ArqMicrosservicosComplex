@@ -58,13 +58,13 @@ Gateway service with HTTP Api is listening on port 8003 and these endpoitns are 
 #### Create Product
 
 ```sh
-$ curl -XPOST -d '{"id": "the_odyssey", "title": "The Odyssey", "passenger_capacity": 101, "maximum_speed": 5, "in_stock": 10}' 'http://localhost:8003/products'
+$ curl -XPOST -d "{\"id\": \"the_odyssey\", \"title\": \"The Odyssey\", \"passenger_capacity\": 101, \"maximum_speed\": 5, \"in_stock\": 10}" http://localhost:8003/products
 ```
 
 #### Get Product
 
 ```sh
-$ curl 'http://localhost:8003/products/the_odyssey'
+$ curl http://localhost:8003/products/the_odyssey
 
 {
   "id": "the_odyssey",
@@ -77,7 +77,7 @@ $ curl 'http://localhost:8003/products/the_odyssey'
 #### Create Order
 
 ```sh
-$ curl -XPOST -d '{"order_details": [{"product_id": "the_odyssey", "price": "100000.99", "quantity": 1}]}' 'http://localhost:8003/orders'
+$ curl -XPOST -d "{\"order_details\": [{\"product_id\": \"the_odyssey\", \"price\": \"100000.99\", \"quantity\": 1}]}" http://localhost:8003/orders
 
 {"id": 1}
 ```
@@ -85,7 +85,7 @@ $ curl -XPOST -d '{"order_details": [{"product_id": "the_odyssey", "price": "100
 #### Get Order
 
 ```sh
-$ curl 'http://localhost:8003/orders/1'
+$ curl http://localhost:8003/orders/1
 
 {
   "id": 1,
